@@ -1,28 +1,14 @@
-export const fn = (/* argumentos de la función */) => {
-   // Cuerpo de la función: Completa la lógica de la función aquí.
+export const fn = (a, b, c) => {
+   
+
+   
 };
 
+const a = 9;
+const b = 10;
+const c = 11;
 
-// precios empanadas
-
-const a = 12
-
-const b = 14
-
-const c = 16
-
-let ePollo = 1
-
-let eCarne = 0
-
-let eVegetal = 0
-
-
-if (eVegetal > ePollo) {
-   const resultado = ePollo - eVegetal
-   console.log(resultado)
-   if (resultado > 0) {
-
-   }
-}
+const priceA = a * 12;
+const priceB = b * 14;
+const priceC = c * 16;
 
