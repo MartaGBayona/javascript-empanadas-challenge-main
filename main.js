@@ -3,61 +3,26 @@
 const a = 0;
 const b = 0;
 const c = 0;
-
-const priceA = a * 12;
-const priceB = b * 14;
-const priceC = c * 16;
-
-const combiAC = (priceA + priceC)/2
-const combiAB = (priceA + priceB)/2
-const combiBC = (priceB + priceC)/2
-
 let combiEmpanadas = 0;
+
 
 // Function
 
 export const fn = (a, b, c) => {
 
-    if (((a + b + c) <40) && ((a + b + c) >=3)  && (a >= 0 && b >= 0 && c >= 0 ) && (a + b + c) % 3 === 0)  {
-        switch (true) {
-            case (a === b && b === c):
-                combiEmpanadas += (((a + b + c) * 14) / 3);
-                break;
-            case (a > b):
-                combiEmpanadas += (a - b) * combiAB;
-                break;
-            case (a === b && c === 0):
-                combiEmpanadas += (((a + b) / 2) * combiAB);
-                break;
-            case (c > a):
-                combiEmpanadas += (c - a) * combiAC;
-                break;
-            case (a === b && c === 0):
-                combiEmpanadas += (((a + b) / 2) * combiAB);
-                break;
-            default:
-                break;
+    if (((a + b + c) < 40) && ((a + b + c) >= 3) && (a >= 0 && b >= 0 && c >= 0) && (a + b + c) % 3 === 0) {
+
+        combiEmpanadas = ((a * 12) + (b * 14) + (c * 16)) / 3 // obtención de la media de la compra de los productos
+
+        while (combiEmpanadas % 1 !== 0) { // bucle que suma 0,1 hasta llegar al siguiente numero entero.
+            combiEmpanadas += 0.1;
+            combiEmpanadas = Math.round(combiEmpanadas * 10) / 10; // Corrección de errores con la suma de decimales.
         }
+
     } else {
-        throw error
+        throw error // evaluación de los erroes
     }
-    console.log("Resultado de combiEmpanadas:", combiEmpanadas);
-    return combiEmpanadas;
+    return combiEmpanadas
 };
 
 fn(3, 3, 0)
-
-
-// if(a === b && b === c) {
-//     combiEmpanadas += (((a + b + c) * 14)/ 3) ;
-// }
-// if (a > b) {
-//     combiEmpanadas += (a - b) * combiAB;
-// }
-// if (a === b && c === 0) {
-//     combiEmpanadas += (((a + b)/3)*combiAB)
-// }
-
-
-
-
